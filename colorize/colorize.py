@@ -46,15 +46,15 @@ class Color:
     # Basic
     def color(self, color=""):
         """Wrap with color"""
-        return self._wrap(pre=3, num=self.COLORS.get(color, "black"))
+        return self._wrap(attr=3, num=self.COLORS.get(color, "black"))
 
     def background(self, color=""):
         """Wrap with background color"""
-        return self._wrap(pre=4, num=self.COLORS.get(color, "white"))
+        return self._wrap(attr=4, num=self.COLORS.get(color, "white"))
 
     def style(self, style=""):
         """Wrap with background color"""
-        return self._wrap(pre="", num=self.STYLE.get(style, "reset"))
+        return self._wrap(attr="", num=self.STYLE.get(style, "reset"))
 
     # Alignment
     def left(self, amt=10):
