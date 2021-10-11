@@ -1,5 +1,5 @@
 # colorize
-**Simple python class to color, align and style terminal text. **
+__Simple python class to color, align and style terminal text.__
 
 ### FG Colors
 
