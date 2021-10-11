@@ -81,7 +81,8 @@ print(obj1+obj2)
 ```
 obj = Color("This is some text").yellow().inverse()
 string = "This is some more text"
-print(obj+string)
+combo = obj + string
+print(combo)
 ```
 
 
