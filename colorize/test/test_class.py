@@ -25,7 +25,7 @@ class TestColor(unittest.TestCase):
         for col in self.tests:
             obj = Color("this is a test")
             getattr(obj, col[0])()
-            self.assertEqual(obj.text, col[1])
+            self.assertEqual(obj.text, col[1], col[1])
 
 class TestBackground(TestColor):
     """Test Background Color"""
@@ -51,7 +51,15 @@ class TestStyle(TestColor):
             ("underline", "\33[4mthis is a test\33[0m"),
             ("blink", "\33[5mthis is a test\33[0m"),
             ("inverse", "\33[7mthis is a test\33[0m"),
-            ("strike", "\33[9mthis is a test\33[0m"),
+            )
+
+class TestAlign(TestColor):
+    """Test Alignment"""
+
+    tests = (
+            ("left", "this is a test           "),
+            ("right", "           this is a test"),
+            ("center", "     this is a test      "),
             )
 
 class TestChainColor(unittest.TestCase):
@@ -86,7 +94,6 @@ class TestChainStyle(TestChainColor):
             ("underline", "\33[4m\33[1mthis is a test\33[0m\33[0m"),
             ("blink", "\33[5m\33[1mthis is a test\33[0m\33[0m"),
             ("inverse", "\33[7m\33[1mthis is a test\33[0m\33[0m"),
-            ("strike", "\33[9m\33[1mthis is a test\33[0m\33[0m"),
             )
 
 class TestChainBackground(TestChainColor):

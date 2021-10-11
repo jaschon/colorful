@@ -1,5 +1,16 @@
 #!/usr/bin/env python3
-"""Color terminal text with ANSI Styles and Colors"""
+"""Color terminal text with ANSI Escape Styles and Colors"""
+
+# NOTE:
+# reset = \33[0m
+# color = \33[ + 3 + COLOR NUMBER + m
+# style = \33[ + STYLE NUMBER + m
+# bg = \33[ + 4 + COLOR NUMBER + m
+
+# - Can make "bright" colors with attr of 9 instead of 3
+# but this seems to be similar to bold() in most terminals.
+# - Some styles don't seem to work in the terminals I've tried
+# so I didn't make methods for them.
 
 __author__ = "Jason Rebuck"
 __copyright__ = "2021"
@@ -27,7 +38,7 @@ class Color:
             "italic" : 3, #not usually supported
             "underline" : 4,
             "blink" : 5,
-            "rapid" : 6, #not usually supported
+            "rapid" : 6, #rapid blink. not usually supported
             "inverse" : 7,
             "hide" : 8, #not usually supported
             "strike" : 9, #not usually supported
@@ -43,27 +54,20 @@ class Color:
         return self
 
     # Basic
-    def color(self, color=""):
+    def _color(self, color=""):
         """Wrap with color"""
-        return self._wrap(3, self.COLORS.get(color, ""))
+        return self._wrap(3, self.COLORS.get(color, 0))
 
-    def bright(self, color=""):
-        """Wrap with bright color"""
-        return self._wrap(9, self.COLORS.get(color, ""))
-
-    def background(self, color=""):
+    def _bg(self, color=""):
         """Wrap with background color"""
-        return self._wrap(4, self.COLORS.get(color, ""))
+        return self._wrap(4, self.COLORS.get(color, 0))
 
-    def bgbright(self, color=""):
-        """Wrap with bright background color"""
-        return self._wrap(10, self.COLORS.get(color, ""))
-
-    def style(self, style=""):
+    def _style(self, style=""):
         """Wrap with style"""
-        return self._wrap("", self.STYLES.get(style, ""))
+        return self._wrap("", self.STYLES.get(style, 0))
 
     # Alignment
+    #NOTE Not ANSI, but helpful.
     def left(self, amt=25):
         """Left align"""
         self.text = f"{self.text:<{amt}}"
@@ -82,103 +86,95 @@ class Color:
     #Shortcut Colors
     def black(self):
         """Color Black"""
-        return self.color("black")
+        return self._color("black")
 
     def red(self):
         """Color Red"""
-        return self.color("red")
+        return self._color("red")
 
     def green(self):
         """Color Green"""
-        return self.color("green")
+        return self._color("green")
 
     def yellow(self):
         """Color Yellow"""
-        return self.color("yellow")
+        return self._color("yellow")
 
     def blue(self):
         """Color Blue"""
-        return self.color("blue")
+        return self._color("blue")
 
     def magenta(self):
         """Color Magenta"""
-        return self.color("magenta")
+        return self._color("magenta")
 
     def cyan(self):
         """Color Cyan"""
-        return self.color("cyan")
+        return self._color("cyan")
 
     def white(self):
         """Color White"""
-        return self.color("white")
+        return self._color("white")
 
     #Shortcut Background
     def bgblack(self):
         """Background Black"""
-        return self.background("black")
+        return self._bg("black")
 
     def bgred(self):
         """Background Red"""
-        return self.background("red")
+        return self._bg("red")
 
     def bggreen(self):
         """Background Green"""
-        return self.background("green")
+        return self._bg("green")
 
     def bgyellow(self):
         """Background Yellow"""
-        return self.background("yellow")
+        return self._bg("yellow")
 
     def bgblue(self):
         """Background Blue"""
-        return self.background("blue")
+        return self._bg("blue")
 
     def bgmagenta(self):
         """Background Magenta"""
-        return self.background("magenta")
+        return self._bg("magenta")
 
     def bgcyan(self):
         """Background Cyan"""
-        return self.background("cyan")
+        return self._bg("cyan")
 
     def bgwhite(self):
         """Background White"""
-        return self.background("white")
+        return self._bg("white")
 
     # Shortcut Styles
     def bold(self):
         """Style Bold"""
-        return self.style("bold")
+        return self._style("bold")
 
     def dim(self):
         """Style Dim"""
-        return self.style("dim")
+        return self._style("dim")
 
     def blink(self):
         """Style blink"""
-        return self.style("blink")
+        return self._style("blink")
 
     def italic(self):
         """Style Italic"""
-        return self.style("italic")
+        return self._style("italic")
 
     def underline(self):
         """Style Underline"""
-        return self.style("underline")
+        return self._style("underline")
 
     def inverse(self):
         """Style Inverse"""
-        return self.style("inverse")
-
-    def strike(self):
-        """Style Strike"""
-        return self.style("strike")
+        return self._style("inverse")
 
     # Output
-    def get(self, *args, **kwargs):
-        """Print Text"""
-        print(self.text, *args, **kwargs)
-
     def __add__(self, obj):
         """Concat Text or Color Objs"""
         if isinstance(obj, Color):
