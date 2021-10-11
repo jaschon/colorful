@@ -32,13 +32,19 @@ __Simple python class to color, align and style terminal text.__
 
 ---
 
-### Simple Example
+### Simple Example 1
 
 ```
 c = Color("This is some text")
 c.bold() #set bold style
 c.green() #set green text
 print(c) #output
+```
+
+### Simple Example 2
+
+```
+print(Color("This is some text").green())
 ```
 
 ---
