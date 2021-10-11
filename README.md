@@ -41,7 +41,7 @@
 
 ---
 
-## Simple Example
+### Simple Example
 
 ```
 c = Color("This is some text")
@@ -60,7 +60,7 @@ c.bold().green().bgmagenta().left(center) #green text, magenta background and al
 print(c) #output
 ```
 
-## Chain Example 2
+### Chain Example 2
 
 ```
 print(Color("This is some text").bold().yellow()) # Create, chain and output in one line.
@@ -68,7 +68,7 @@ print(Color("This is some text").bold().yellow()) # Create, chain and output in 
 
 ---
 
-## Object Adding Example 1
+### Object Adding Example 1
 
 ```
 obj1 = Color("This is some text").yellow().inverse()
@@ -76,7 +76,7 @@ obj2 = Color("This is some more text").magenta().blink()
 print(obj1+obj2)
 ```
 
-## Object Adding Example 2
+### Object Adding Example 2
 
 ```
 obj = Color("This is some text").yellow().inverse()
