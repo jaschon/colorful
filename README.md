@@ -65,7 +65,7 @@ print(Color("This is some text").bold().yellow()) # Create, chain and output in 
 
 ---
 
-### Adding Example 1
+### Add Example 1
 
 ```
 obj1 = Color("This is some text").yellow().inverse()
@@ -73,7 +73,7 @@ obj2 = Color("This is some more text").magenta().blink()
 print(obj1+obj2)
 ```
 
-### Adding Example 2
+### Add Example 2
 
 ```
 obj = Color("This is some text").yellow().inverse()
