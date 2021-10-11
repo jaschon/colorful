@@ -32,15 +32,6 @@ __Simple python class to color, align and style terminal text.__
 
 ---
 
-
-## Notes
-
-- Use `print()` to output.
-- Can chain multiple methods together.
-- Can add objects and strings together.
-
----
-
 ### Simple Example
 
 ```
@@ -68,7 +59,7 @@ print(Color("This is some text").bold().yellow()) # Create, chain and output in 
 
 ---
 
-### Object Adding Example 1
+### Adding Example 1
 
 ```
 obj1 = Color("This is some text").yellow().inverse()
@@ -76,7 +67,7 @@ obj2 = Color("This is some more text").magenta().blink()
 print(obj1+obj2)
 ```
 
-### Object Adding Example 2
+### Adding Example 2
 
 ```
 obj = Color("This is some text").yellow().inverse()
