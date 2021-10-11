@@ -54,6 +54,12 @@ def add():
     obj3 = "Third String"
     print(obj1+obj2+obj3)
 
+
+    obj = Color("This is an object").blue()
+    string = "More Stuff"
+    combo = obj + string
+    print(combo)
+
 if __name__ == "__main__":
     print()
     colors()

@@ -67,7 +67,7 @@ class Color:
         return self._wrap("", self.STYLES.get(style, 0))
 
     # Alignment
-    #NOTE Not ANSI, but helpful.
+    # NOTE Not ANSI, but helpful.
     def left(self, amt=25):
         """Left align"""
         self.text = f"{self.text:<{amt}}"
@@ -83,7 +83,7 @@ class Color:
         self.text = f"{self.text:^{amt}}"
         return self
 
-    #Shortcut Colors
+    # Shortcut Colors
     def black(self):
         """Color Black"""
         return self._color("black")
@@ -116,7 +116,7 @@ class Color:
         """Color White"""
         return self._color("white")
 
-    #Shortcut Background
+    # Shortcut Background
     def bgblack(self):
         """Background Black"""
         return self._bg("black")
