@@ -44,7 +44,7 @@ print(c) #output
 ### Simple Example 2
 
 ```
-print(Color("This is some text").green())
+print(Color("This is some text").green()) # Create and output in one line.
 ```
 
 ---
