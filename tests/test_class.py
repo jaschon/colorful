@@ -26,6 +26,7 @@ class TestColor(unittest.TestCase):
             obj = Color("this is a test")
             getattr(obj, col[0])()
             self.assertEqual(obj.text, col[1], col[1])
+            self.assertEqual(obj, getattr(obj, col[0])())
 
 class TestBackground(TestColor):
     """Test Background Color"""
@@ -83,6 +84,7 @@ class TestChainColor(unittest.TestCase):
             obj.bold()
             getattr(obj, col[0])()
             self.assertEqual(obj.text, col[1])
+            self.assertEqual(obj, getattr(obj, col[0])())
 
 class TestChainStyle(TestChainColor):
     """Test Chain Styles with Bold"""
