@@ -177,10 +177,7 @@ class Color:
     # Output
     def __add__(self, obj):
         """Concat Text or Color Objs"""
-        if isinstance(obj, Color):
-            self.text = self.text + " " + obj.text
-        elif isinstance(obj, str):
-            self.text = self.text + " " + obj
+        self.text = f"{self.text} {obj}"
         return self
 
     def __repr__(self):

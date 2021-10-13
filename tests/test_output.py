@@ -1,71 +1,99 @@
 #!/usr/bin/env python3
 """Test Color Output"""
 
-import sys
-# sys.path.append("..")
+import unittest
 from colorize.colorize import Color
 
-def colors():
-    """Test Color Output"""
-    print(Color("1. None (black)"))
-    print(Color("2. Black Text").black())
-    print(Color("3. Red Text").red())
-    print(Color("4. Green Text").green())
-    print(Color("5. Blue Text").blue())
-    print(Color("6. Yellow Text").yellow())
-    print(Color("7. Magenta Text").magenta())
-    print(Color("8. Cyan Text").cyan())
-    print(Color("9. White Text").white())
+class TestOutputColor(unittest.TestCase):
+    """Test Output Base Color"""
 
-def styles():
-    """Test Style Output"""
-    print(Color("10. Bold Style").bold())
-    print(Color("11. Dim Style").dim())
-    print(Color("12. Underline Style").underline())
-    print(Color("13. Blink Style").blink())
-    print(Color("14. Inverse Style").inverse())
+    title = "Color"
+    check = Color.COLORS
+    method = "_color"
+    method_add = ""
 
-def backgrounds():
-    """Test Background Output"""
-    print(Color("15. Black BG").bgblack())
-    print(Color("16.Red BG").bgred())
-    print(Color("17. Green BG").bggreen())
-    print(Color("18. Blue BG").bgblue())
-    print(Color("19. Yellow BG").bgyellow())
-    print(Color("20. Magenta BG").bgmagenta())
-    print(Color("21. Cyan BG").bgcyan())
-    print(Color("22. White BG").bgwhite())
+    def setUp(self):
+        print()
+        print(Color(self.title).bold().underline())
 
-def align():
-    """Test Alignment"""
-    print(Color("23. Left Align").bold().left(50))
-    print(Color("24. Right Align").red().bold().right(50))
-    print(Color("25. Center Align").green().dim().center(50))
+    def tearDown(self):
+        print()
 
-def chain():
-    """Test Method Chaining"""
-    print(Color("26. bold, cyan, bg black, blink").center(50).cyan().bold().bgblack().blink())
-    print(Color("27. dim black yellow bg, underline").bgyellow().black().dim().underline())
-
-def add():
-    """Test Method Adding"""
-    obj1 = Color("28. First Object Added To").bold().cyan().bgmagenta()
-    obj2 = Color("Second Object").dim().green()
-    obj3 = "Third String"
-    print(obj1+obj2+obj3)
+    def test_loop(self):
+        """Loop through colors and print"""
+        for index, itm in enumerate(self.check):
+            obj = Color(f"{index+1}.) {itm}")
+            if self.method:
+                print(getattr(obj, self.method)(itm))
+            else:
+                if hasattr(obj, self.method_add+itm):
+                    print(getattr(obj, self.method_add+itm)())
+                else:
+                    print(f"X.) *Skipping* ({self.method_add}{itm} method not found)")
 
 
-    obj = Color("This is an object").blue()
-    string = "More Stuff"
-    combo = obj + string
-    print(combo)
+class TestOutputColorWrap(TestOutputColor):
+    """Test Output Base Color Wrapper"""
+
+    title = "Color Wrap"
+    check = Color.COLORS
+    method = ""
+    method_add = ""
+
+
+class TestOutputStyle(TestOutputColor):
+    """Test Output Style"""
+
+    title = "Style"
+    check = Color.STYLES
+    method = "_style"
+    method_add = ""
+
+
+class TestOutputStyleWrapper(TestOutputColor):
+    """Test Output Style Wrapper"""
+
+    title = "Style Wrapper"
+    check = Color.STYLES
+    method = ""
+    method_add = ""
+
+
+class TestOutputBG(TestOutputColor):
+    """Test Output BG"""
+
+    title = "Backgrounds"
+    check = Color.COLORS
+    method = "_bg"
+    method_add = ""
+
+
+class TestOutputBGWrapper(TestOutputColor):
+    """Test Output BG Wrapper"""
+
+    title = "BG Wrapper"
+    check = Color.COLORS
+    method = ""
+    method_add = "bg"
+
+
+class TestOutputAdd(TestOutputColor):
+    """Test Output Class Adding"""
+
+    title = "Class Adding"
+    check = ()
+    method = ""
+    method_add = ""
+
+    def test_loop(self):
+        """Loop through colors and print"""
+        for index, color in enumerate(Color.COLORS):
+            obj1 = Color(f"{index+1}.)").bold()._bg(color)
+            obj2 = Color(f"{color}")._color(color)
+            num = 12345
+            string = "String"
+            print(obj1+obj2+num+string)
+
 
 if __name__ == "__main__":
-    print()
-    colors()
-    styles()
-    backgrounds()
-    align()
-    chain()
-    add()
-    print()
+    unittest.main()
