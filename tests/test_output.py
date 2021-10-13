@@ -2,8 +2,8 @@
 """Test Color Output"""
 
 import sys
-sys.path.append("..")
-from colorize import Color
+# sys.path.append("..")
+from colorize.colorize import Color
 
 def colors():
     """Test Color Output"""

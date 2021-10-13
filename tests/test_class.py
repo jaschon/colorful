@@ -3,8 +3,8 @@
 
 import sys
 import unittest
-sys.path.append("..")
-from colorize import Color
+# sys.path.append("..")
+from colorize.colorize import Color
 
 class TestColor(unittest.TestCase):
     """Test Base Color"""
