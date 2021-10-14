@@ -14,7 +14,7 @@
 
 __author__ = "Jason Rebuck"
 __copyright__ = "2021"
-__version__ = "0.15"
+__version__ = "0.16"
 
 class Color:
     """Output Text With Color And Style"""
