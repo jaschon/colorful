@@ -65,6 +65,17 @@ class Color:
         """Wrap with style"""
         return self._wrap("", self.STYLES.get(style, 0))
 
+    # Advanced 8-bit colors
+    def color8(self, color=0):
+        """Wrap with 8-bit color (0-255)"""
+        #0-255
+        return self._wrap("38;5;", color)
+
+    def bg8(self, color=0):
+        """Wrap with 8-bit bg color (0-255)"""
+        #0-255
+        return self._wrap("48;5;", color)
+
     # Alignment
     # NOTE Not ANSI, but helpful.
     def left(self, amt=25):
