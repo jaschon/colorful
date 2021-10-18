@@ -30,11 +30,10 @@ __A simple python class to color, align and style terminal text.__
 - bold()
 - dim()
 - blink()
-- rapid() __(Rapid Blink. NOT SUPPORTED IN SOME TERMINALS)__
 - italic()
 - underline()
 - inverse()
-- hide() __(Hides Output)__
+- hide()
 - strike() __(NOT SUPPORTED IN SOME TERMINALS)__
 
 ### BG Colors
