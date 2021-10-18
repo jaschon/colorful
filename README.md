@@ -39,7 +39,7 @@ print(Color("This is some text").bold().yellow()) # Create, chain and output in 
 ### Add Example 1
 
 ```
-obj1 = Color("This is some text").yellow().inverse()
+obj1 = Color("This is some text").yellow().invert)
 obj2 = Color("This is some more text").magenta().blink()
 print(obj1+obj2)
 ```
@@ -47,7 +47,7 @@ print(obj1+obj2)
 ### Add Example 2
 
 ```
-obj = Color("This is some text").yellow().inverse()
+obj = Color("This is some text").yellow().invert()
 string = "This is some more text"
 combo = obj + string
 print(combo)
@@ -65,7 +65,6 @@ print(combo)
 - magenta()
 - cyan()
 - white()
-- normal()
 
 ### Bright FG Colors
 
@@ -86,7 +85,7 @@ print(combo)
 - blink()
 - italic()
 - underline()
-- inverse()
+- invert()
 - hide()
 - strike() __--NOT SUPPORTED IN SOME TERMINALS--__
 
