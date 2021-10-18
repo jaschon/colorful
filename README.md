@@ -24,7 +24,7 @@ print(Color("This is some text").green()) # Create and output in one line.
 
 ```
 c = Color("This is a chain example")
-c.bold().green().bgmagenta().left(center) #green text, magenta background and align center (between 50 characters)
+c.bold().green().bgmagenta().left(50) #green text, magenta background and align center (between 50 characters)
 print(c) #output
 ```
 
