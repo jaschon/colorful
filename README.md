@@ -1,53 +1,7 @@
 # colorize
 __A simple python class to color, align and style terminal text.__
 
-### FG Colors
 
-- black()
-- red()
-- green()
-- yellow()
-- blue()
-- magenta()
-- cyan()
-- white()
-- normal()
-
-### Bright FG Colors
-
-- brblack()
-- brred()
-- brgreen()
-- bryellow()
-- brblue()
-- brmagenta()
-- brcyan()
-- brwhite()
-
-### Styles
-
-- reset()
-- bold()
-- dim()
-- blink()
-- italic()
-- underline()
-- inverse()
-- hide()
-- strike() __--NOT SUPPORTED IN SOME TERMINALS--__
-
-### BG Colors
-
-- bgblack()
-- bgred()
-- bggreen()
-- bgyellow()
-- bgblue()
-- bgmagenta()
-- bgcyan()
-- bgwhite()
-
----
 
 ### Simple Example 1
 
@@ -98,6 +52,54 @@ string = "This is some more text"
 combo = obj + string
 print(combo)
 ```
+
+---
+
+### FG Colors
+
+- black()
+- red()
+- green()
+- yellow()
+- blue()
+- magenta()
+- cyan()
+- white()
+- normal()
+
+### Bright FG Colors
+
+- brblack()
+- brred()
+- brgreen()
+- bryellow()
+- brblue()
+- brmagenta()
+- brcyan()
+- brwhite()
+
+### Styles
+
+- reset()
+- bold()
+- dim()
+- blink()
+- italic()
+- underline()
+- inverse()
+- hide()
+- strike() __--NOT SUPPORTED IN SOME TERMINALS--__
+
+### BG Colors
+
+- bgblack()
+- bgred()
+- bggreen()
+- bgyellow()
+- bgblue()
+- bgmagenta()
+- bgcyan()
+- bgwhite()
 
 
 
