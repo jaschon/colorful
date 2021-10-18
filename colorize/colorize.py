@@ -24,7 +24,6 @@ class Color:
             "magenta" : 5,
             "cyan": 6,
             "white": 7,
-            "normal": 9
             }
 
     STYLES = {
@@ -34,8 +33,8 @@ class Color:
             "italic" : 3,
             "underline" : 4,
             "blink" : 5,
-            "rapid" : 6, #rapid blink. not usually supported
-            "inverse" : 7,
+            #"rapid" : 6, #rapid blink. not usually supported
+            "invert" : 7,
             "hide" : 8, #hides output
             "strike" : 9, #not usually supported
             }
@@ -116,10 +115,6 @@ class Color:
         """Color White"""
         return self._color("white")
 
-    def normal(self):
-        """Color Normal"""
-        return self._color("normal")
-
     # Shortcut Bright Colors
     def brblack(self):
         """Color Bright Black"""
@@ -152,10 +147,6 @@ class Color:
     def brwhite(self):
         """Color Bright White"""
         return self._bright("white")
-
-    def brnormal(self):
-        """Color Bright Normal"""
-        return self._bright("normal")
 
     # Shortcut Background
     def bgblack(self):
@@ -190,10 +181,6 @@ class Color:
         """Background White"""
         return self._bg("white")
 
-    def bgnormal(self):
-        """Background Normal"""
-        return self._bg("normal")
-
     # Shortcut Styles
     def reset(self):
         """Style Reset"""
@@ -211,11 +198,6 @@ class Color:
         """Style blink"""
         return self._style("blink")
 
-    def rapid(self):
-        """Style rapid blink"""
-        #NOT USUALLY SUPPORTED!
-        return self._style("rapid")
-
     def italic(self):
         """Style Italic"""
         return self._style("italic")
@@ -224,9 +206,9 @@ class Color:
         """Style Underline"""
         return self._style("underline")
 
-    def inverse(self):
+    def invert(self):
         """Style Inverse"""
-        return self._style("inverse")
+        return self._style("invert")
 
     def hide(self):
         """Style Hidden"""
