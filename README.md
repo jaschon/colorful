@@ -1,5 +1,5 @@
 # colorize
-__Color, align, and style terminal text.__
+__Color terminal text with ANSI Styles and Colors.__
 
 
 
