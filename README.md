@@ -19,7 +19,7 @@ print(Color("This is some text").green()) # Create and output in one line.
 ### Simple Example 3 (8-bit Color)
 
 ```
-print(Color("This is some text").color8(32)) # Create and output in one line.
+print(Color("This is some text").color8(32)) # Create and output 8-bit color in one line.
 ```
 
 ---
