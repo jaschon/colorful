@@ -101,7 +101,9 @@ print(combo)
 - bgcyan()
 - bgwhite()
 
+### Alignment
 
-
-
+- left()
+- center()
+- right()
 
