@@ -3,7 +3,6 @@
 
 import sys
 import unittest
-# sys.path.append("..")
 from colorize.colorize import Color
 
 class TestColor(unittest.TestCase):
@@ -27,6 +26,22 @@ class TestColor(unittest.TestCase):
             getattr(obj, col[0])()
             self.assertEqual(obj.text, col[1], col[1])
             self.assertEqual(obj, getattr(obj, col[0])())
+
+
+class TestBright(TestColor):
+    """Test Bright Color"""
+
+    tests = (
+            ("brblack", "\33[90mthis is a test\33[0m"),
+            ("brred", "\33[91mthis is a test\33[0m"),
+            ("brgreen", "\33[92mthis is a test\33[0m"),
+            ("bryellow", "\33[93mthis is a test\33[0m"),
+            ("brblue", "\33[94mthis is a test\33[0m"),
+            ("brmagenta", "\33[95mthis is a test\33[0m"),
+            ("brcyan", "\33[96mthis is a test\33[0m"),
+            ("brwhite", "\33[97mthis is a test\33[0m"),
+            )
+
 
 class TestBackground(TestColor):
     """Test Background Color"""
@@ -52,6 +67,8 @@ class TestStyle(TestColor):
             ("underline", "\33[4mthis is a test\33[0m"),
             ("blink", "\33[5mthis is a test\33[0m"),
             ("inverse", "\33[7mthis is a test\33[0m"),
+            ("hide", "\33[8mthis is a test\33[0m"),
+            ("strike", "\33[9mthis is a test\33[0m"),
             )
 
 class TestAlign(TestColor):

@@ -4,17 +4,13 @@
 # NOTE:
 # reset = \33[0m
 # color = \33[ + 3 + COLOR NUMBER + m
+# bright = \33[ + 9 + COLOR NUMBER + m
 # style = \33[ + STYLE NUMBER + m
 # bg = \33[ + 4 + COLOR NUMBER + m
 
-# - Can make "bright" colors with attr of 9 instead of 3
-# but this seems to be similar to bold() in most terminals.
-# - Some styles don't seem to work in the terminals I've tried
-# so I didn't make methods for them.
-
 __author__ = "Jason Rebuck"
 __copyright__ = "2021"
-__version__ = "0.16"
+__version__ = "0.18"
 
 class Color:
     """Output Text With Color And Style"""
@@ -35,12 +31,12 @@ class Color:
             "reset" : 0,
             "bold" : 1,
             "dim" : 2,
-            "italic" : 3, #not usually supported
+            "italic" : 3,
             "underline" : 4,
             "blink" : 5,
             "rapid" : 6, #rapid blink. not usually supported
             "inverse" : 7,
-            "hide" : 8, #not usually supported
+            "hide" : 8, #hides output
             "strike" : 9, #not usually supported
             }
 
@@ -57,6 +53,10 @@ class Color:
     def _color(self, color=""):
         """Wrap with color"""
         return self._wrap(3, self.COLORS.get(color, 0))
+
+    def _bright(self, color=""):
+        """Wrap with bright color"""
+        return self._wrap(9, self.COLORS.get(color, 0))
 
     def _bg(self, color=""):
         """Wrap with background color"""
@@ -116,6 +116,47 @@ class Color:
         """Color White"""
         return self._color("white")
 
+    def normal(self):
+        """Color Normal"""
+        return self._color("normal")
+
+    # Shortcut Bright Colors
+    def brblack(self):
+        """Color Bright Black"""
+        return self._bright("black")
+
+    def brred(self):
+        """Color Bright Red"""
+        return self._bright("red")
+
+    def brgreen(self):
+        """Color Bright Green"""
+        return self._bright("green")
+
+    def bryellow(self):
+        """Color Bright Yellow"""
+        return self._bright("yellow")
+
+    def brblue(self):
+        """Color Bright Blue"""
+        return self._bright("blue")
+
+    def brmagenta(self):
+        """Color Bright Magenta"""
+        return self._bright("magenta")
+
+    def brcyan(self):
+        """Color Bright Cyan"""
+        return self._bright("cyan")
+
+    def brwhite(self):
+        """Color Bright White"""
+        return self._bright("white")
+
+    def brnormal(self):
+        """Color Bright Normal"""
+        return self._bright("normal")
+
     # Shortcut Background
     def bgblack(self):
         """Background Black"""
@@ -149,7 +190,15 @@ class Color:
         """Background White"""
         return self._bg("white")
 
+    def bgnormal(self):
+        """Background Normal"""
+        return self._bg("normal")
+
     # Shortcut Styles
+    def reset(self):
+        """Style Reset"""
+        return self._style("reset")
+
     def bold(self):
         """Style Bold"""
         return self._style("bold")
@@ -162,6 +211,11 @@ class Color:
         """Style blink"""
         return self._style("blink")
 
+    def rapid(self):
+        """Style rapid blink"""
+        #NOT USUALLY SUPPORTED!
+        return self._style("rapid")
+
     def italic(self):
         """Style Italic"""
         return self._style("italic")
@@ -173,6 +227,15 @@ class Color:
     def inverse(self):
         """Style Inverse"""
         return self._style("inverse")
+
+    def hide(self):
+        """Style Hidden"""
+        return self._style("hide")
+
+    def strike(self):
+        """Style Strike"""
+        #NOT USUALLY SUPPORTED!
+        return self._style("strike")
 
     # Output
     def __add__(self, obj):

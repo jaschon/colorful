@@ -77,6 +77,22 @@ class TestOutputBGWrapper(TestOutputColor):
     method_add = "bg"
 
 
+class TestOutputBright(TestOutputColor):
+    """Test Output Bright"""
+
+    title = "Bright"
+    check = Color.COLORS
+    method = "_bright"
+    method_add = ""
+
+class TestOutputBrightWrapper(TestOutputColor):
+    """Test Output Bright Wrapper"""
+
+    title = "Bright Wrapper"
+    check = Color.COLORS
+    method = ""
+    method_add = "br"
+
 class TestOutputAdd(TestOutputColor):
     """Test Output Class Adding"""
 
