@@ -11,13 +11,31 @@ __A simple python class to color, align and style terminal text.__
 - magenta()
 - cyan()
 - white()
+- normal()
+
+### Bright FG Colors
+
+- brblack()
+- brred()
+- brgreen()
+- bryellow()
+- brblue()
+- brmagenta()
+- brcyan()
+- brwhite()
 
 ### Styles
 
+- reset()
 - bold()
 - dim()
 - blink()
+- rapid() __(Rapid Blink. NOT SUPPORTED IN SOME TERMINALS)__
+- italic()
+- underline()
 - inverse()
+- hide() __(Hides Output)__
+- strike() __(NOT SUPPORTED IN SOME TERMINALS)__
 
 ### BG Colors
 
