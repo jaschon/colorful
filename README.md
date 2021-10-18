@@ -34,7 +34,7 @@ __A simple python class to color, align and style terminal text.__
 - underline()
 - inverse()
 - hide()
-- strike() __(NOT SUPPORTED IN SOME TERMINALS)__
+- strike() __--NOT SUPPORTED IN SOME TERMINALS--__
 
 ### BG Colors
 
