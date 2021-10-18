@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Color terminal text with ANSI Escape Styles and Colors"""
+"""Color terminal text with ANSI Styles and Colors"""
 
 # NOTE:
 # reset = \33[0m
