@@ -1,5 +1,5 @@
 # colorize
-__A simple python class to color, align and style terminal text.__
+__Color, align and style terminal text.__
 
 
 
