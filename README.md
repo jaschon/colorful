@@ -1,8 +1,6 @@
 # colorize
 __Color terminal text with ANSI Styles and Colors.__
 
-
-
 ### Simple Example 1
 
 ```
@@ -16,6 +14,12 @@ print(c) #output
 
 ```
 print(Color("This is some text").green()) # Create and output in one line.
+```
+
+### Simple Example 3 (8-bit Color)
+
+```
+print(Color("This is some text").color8(32)) # Create and output in one line.
 ```
 
 ---
@@ -102,7 +106,12 @@ print(combo)
 
 ### Alignment
 
-- left()
-- center()
-- right()
+- left(_NUM_)
+- center(_NUM_)
+- right(_NUM_)
+
+### 8-Bit Colors
+
+- color8(_0-255_)
+- bg8(_0-255_)
 
