@@ -65,23 +65,29 @@ class Color:
         """Wrap with style"""
         return self._wrap("", self.STYLES.get(style, 0))
 
-    # 8-bit colors
+    #8-bit (256) colors
+    ###################
+    #0-7 = standard
+    #8-15 = bright
+    #16-231 = 216 colors
+    #232-255 = grayscale
+
     def color8(self, color=0):
         """Wrap with 8-bit color (0-255)"""
-        #0-255
         return self._wrap("38;5;", color)
 
     def bg8(self, color=0):
         """Wrap with 8-bit bg color (0-255)"""
-        #0-255
         return self._wrap("48;5;", color)
 
     # 24-bit colors
+    # R,G,B
+    # NOT SUPPORTED IN SOME TERMINALS
     def color24(self, r=0, g=0, b=0):
         """Wrap with 24-bit color (r,g,b)"""
         return self._wrap("38;2;", f"{r};{g};{b}")
 
-    def bg24(self, color=0):
+    def bg24(self, r=0, g=0, b=0):
         """Wrap with 24-bit bg color (r,g,b)"""
         return self._wrap("48;2;", f"{r};{g};{b}")
 
