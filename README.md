@@ -110,8 +110,18 @@ print(combo)
 - center(_NUM_)
 - right(_NUM_)
 
-### 8-Bit Colors
+### 8-Bit Colors 
+
+#### (1-7 = Standard, 8-15 = Bright, 16-231 = 216 Palette, 232-255 = Grayscale)
 
 - color8(_0-255_)
 - bg8(_0-255_)
+
+### 24-Bit Colors 
+
+#### (__NOT SUPPORTED IN SOME TERMINALS__)
+
+- color24(_r_, _g_, _b_)
+- bg24(_r_, _g_, _b_)
+
 
