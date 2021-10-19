@@ -104,11 +104,15 @@ print(combo)
 - bgcyan()
 - bgwhite()
 
+---
+
 ### Alignment
 
 - left(_NUM_)
 - center(_NUM_)
 - right(_NUM_)
+
+---
 
 ### 8-Bit Colors 
 
@@ -116,6 +120,9 @@ print(combo)
 
 - color8(_0-255_)
 - bg8(_0-255_)
+
+---
+
 
 ### 24-Bit Colors 
 
