@@ -28,7 +28,7 @@ print(Color("This is some text").color8(32)) # Create and output 8-bit color in 
 
 ```
 c = Color("This is a chain example")
-c.bold().green().bgmagenta().center(50) #green text, magenta background and align center (between 50 characters)
+c.bold().green().bgmagenta() #green text, magenta background
 print(c) #output
 ```
 
@@ -103,14 +103,6 @@ print(combo)
 - bgmagenta()
 - bgcyan()
 - bgwhite()
-
----
-
-### Alignment
-
-- left(_NUM_)
-- center(_NUM_)
-- right(_NUM_)
 
 ---
 

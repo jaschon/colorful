@@ -39,13 +39,15 @@ class Color:
             "strike" : 9, #not usually supported
             }
 
+    esc = "\033["
+
     def __init__(self, text=""):
         """Collect Text"""
         self.text = text
 
-    def _wrap(self, attr="", num=0):
+    def _wrap(self, attr="", num=0, end="m"):
         """Wrap with ANSI codes"""
-        self.text = f"\033[{attr}{num}m{self.text}\033[0m"
+        self.text = f"{self.esc}{attr}{num}{end}{self.text}{self.esc}0{end}"
         return self
 
     # Basic
@@ -90,23 +92,6 @@ class Color:
     def bg24(self, r=0, g=0, b=0):
         """Wrap with 24-bit bg color (r,g,b)"""
         return self._wrap("48;2;", f"{r};{g};{b}")
-
-    # Alignment
-    # NOTE Not ANSI, but helpful.
-    def left(self, amt=25):
-        """Left align"""
-        self.text = f"{self.text:<{amt}}"
-        return self
-
-    def right(self, amt=25):
-        """Left align"""
-        self.text = f"{self.text:>{amt}}"
-        return self
-
-    def center(self, amt=25):
-        """Left align"""
-        self.text = f"{self.text:^{amt}}"
-        return self
 
     # Shortcut Colors
     def black(self):

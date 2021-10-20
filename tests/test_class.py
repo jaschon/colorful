@@ -71,15 +71,6 @@ class TestStyle(TestColor):
             ("strike", "\33[9mthis is a test\33[0m"),
             )
 
-class TestAlign(TestColor):
-    """Test Alignment"""
-
-    tests = (
-            ("left", "this is a test           "),
-            ("right", "           this is a test"),
-            ("center", "     this is a test      "),
-            )
-
 class TestChainColor(unittest.TestCase):
     """Test Chain Colors with Bold"""
 
