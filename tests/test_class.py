@@ -3,7 +3,7 @@
 
 import sys
 import unittest
-from colorize.colorize import Color
+from colorize import Color
 
 class TestColor(unittest.TestCase):
     """Test Base Color"""

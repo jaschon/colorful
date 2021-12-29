@@ -2,7 +2,7 @@
 """Test Color Output"""
 
 import unittest
-from colorize.colorize import Color
+from colorize import Color
 
 class TestOutputColor(unittest.TestCase):
     """Test Output Base Color"""

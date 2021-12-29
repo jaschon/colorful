@@ -2,7 +2,7 @@
 
 import os
 from setuptools import setup
-from colorize import colorize
+import colorize
 
 def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
@@ -16,4 +16,5 @@ setup(
     url = "https://github.com/jaschon/colorize",
     packages=['colorize', 'tests'],
     long_description=read('README.md'),
+    test_suite="tests",
 )
