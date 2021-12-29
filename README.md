@@ -8,7 +8,7 @@ python setup.py install
 python setup.py test
 ```
 
-## Use
+## Import
 
 ```
 from colorize import Color
