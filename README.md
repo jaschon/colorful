@@ -120,7 +120,7 @@ print(combo)
 #### (1-7 = Standard, 8-15 = Bright, 16-231 = 216 Palette, 232-255 = Grayscale)
 
 - extended(_0-255_)
-- on\_extendted(_0-255_)
+- on\_extended(_0-255_)
 
 ---
 
