@@ -3,7 +3,7 @@
 
 import sys
 import unittest
-from colorize import Color
+from colorful import Color
 
 class TestColor(unittest.TestCase):
     """Test Base Color"""
@@ -32,14 +32,14 @@ class TestBright(TestColor):
     """Test Bright Color"""
 
     tests = (
-            ("brblack", "\33[90mthis is a test\33[0m"),
-            ("brred", "\33[91mthis is a test\33[0m"),
-            ("brgreen", "\33[92mthis is a test\33[0m"),
-            ("bryellow", "\33[93mthis is a test\33[0m"),
-            ("brblue", "\33[94mthis is a test\33[0m"),
-            ("brmagenta", "\33[95mthis is a test\33[0m"),
-            ("brcyan", "\33[96mthis is a test\33[0m"),
-            ("brwhite", "\33[97mthis is a test\33[0m"),
+            ("bright_black", "\33[90mthis is a test\33[0m"),
+            ("bright_red", "\33[91mthis is a test\33[0m"),
+            ("bright_green", "\33[92mthis is a test\33[0m"),
+            ("bright_yellow", "\33[93mthis is a test\33[0m"),
+            ("bright_blue", "\33[94mthis is a test\33[0m"),
+            ("bright_magenta", "\33[95mthis is a test\33[0m"),
+            ("bright_cyan", "\33[96mthis is a test\33[0m"),
+            ("bright_white", "\33[97mthis is a test\33[0m"),
             )
 
 
@@ -47,14 +47,14 @@ class TestBackground(TestColor):
     """Test Background Color"""
 
     tests = (
-            ("bgblack", "\33[40mthis is a test\33[0m"),
-            ("bgred", "\33[41mthis is a test\33[0m"),
-            ("bggreen", "\33[42mthis is a test\33[0m"),
-            ("bgyellow", "\33[43mthis is a test\33[0m"),
-            ("bgblue", "\33[44mthis is a test\33[0m"),
-            ("bgmagenta", "\33[45mthis is a test\33[0m"),
-            ("bgcyan", "\33[46mthis is a test\33[0m"),
-            ("bgwhite", "\33[47mthis is a test\33[0m"),
+            ("on_black", "\33[40mthis is a test\33[0m"),
+            ("on_red", "\33[41mthis is a test\33[0m"),
+            ("on_green", "\33[42mthis is a test\33[0m"),
+            ("on_yellow", "\33[43mthis is a test\33[0m"),
+            ("on_blue", "\33[44mthis is a test\33[0m"),
+            ("on_magenta", "\33[45mthis is a test\33[0m"),
+            ("on_cyan", "\33[46mthis is a test\33[0m"),
+            ("on_white", "\33[47mthis is a test\33[0m"),
             )
 
 class TestStyle(TestColor):
@@ -110,14 +110,14 @@ class TestChainBackground(TestChainColor):
     """Test Chain Background with Bold"""
 
     tests = (
-            ("bgblack", "\33[40m\33[1mthis is a test\33[0m\33[0m"),
-            ("bgred", "\33[41m\33[1mthis is a test\33[0m\33[0m"),
-            ("bggreen", "\33[42m\33[1mthis is a test\33[0m\33[0m"),
-            ("bgyellow", "\33[43m\33[1mthis is a test\33[0m\33[0m"),
-            ("bgblue", "\33[44m\33[1mthis is a test\33[0m\33[0m"),
-            ("bgmagenta", "\33[45m\33[1mthis is a test\33[0m\33[0m"),
-            ("bgcyan", "\33[46m\33[1mthis is a test\33[0m\33[0m"),
-            ("bgwhite", "\33[47m\33[1mthis is a test\33[0m\33[0m"),
+            ("on_black", "\33[40m\33[1mthis is a test\33[0m\33[0m"),
+            ("on_red", "\33[41m\33[1mthis is a test\33[0m\33[0m"),
+            ("on_green", "\33[42m\33[1mthis is a test\33[0m\33[0m"),
+            ("on_yellow", "\33[43m\33[1mthis is a test\33[0m\33[0m"),
+            ("on_blue", "\33[44m\33[1mthis is a test\33[0m\33[0m"),
+            ("on_magenta", "\33[45m\33[1mthis is a test\33[0m\33[0m"),
+            ("on_cyan", "\33[46m\33[1mthis is a test\33[0m\33[0m"),
+            ("on_white", "\33[47m\33[1mthis is a test\33[0m\33[0m"),
             )
 
 class TestAdd(unittest.TestCase):

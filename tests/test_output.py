@@ -2,7 +2,7 @@
 """Test Color Output"""
 
 import unittest
-from colorize import Color
+from colorful import Color
 
 class TestOutputColor(unittest.TestCase):
     """Test Output Base Color"""
@@ -74,7 +74,7 @@ class TestOutputBGWrapper(TestOutputColor):
     title = "BG Wrapper"
     check = Color.COLORS
     method = ""
-    method_add = "bg"
+    method_add = "on_"
 
 
 class TestOutputBright(TestOutputColor):
@@ -91,7 +91,7 @@ class TestOutputBrightWrapper(TestOutputColor):
     title = "Bright Wrapper"
     check = Color.COLORS
     method = ""
-    method_add = "br"
+    method_add = "bright_"
 
 class TestOutputAdd(TestOutputColor):
     """Test Output Class Adding"""

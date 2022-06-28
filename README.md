@@ -1,4 +1,4 @@
-# colorize
+# colorful
 __Color terminal text with ANSI Styles and Colors.__
 
 ## Install
@@ -11,7 +11,7 @@ python setup.py test
 ## Import
 
 ```
-from colorize import Color
+from colorful import Color
 ...
 ```
 
@@ -31,19 +31,13 @@ print(c) #output
 print(Color("This is some text").green()) # Create and output in one line.
 ```
 
-### Simple Example 3 (8-bit Color)
-
-```
-print(Color("This is some text").color8(32)) # Create and output 8-bit color in one line.
-```
-
 ---
 
 ### Chain Example 1
 
 ```
 c = Color("This is a chain example")
-c.bold().green().bgmagenta() #green text, magenta background
+c.bold().green().on\_magenta() #green text, magenta background
 print(c) #output
 ```
 
@@ -87,14 +81,14 @@ print(combo)
 
 ### Bright FG Colors
 
-- brblack()
-- brred()
-- brgreen()
-- bryellow()
-- brblue()
-- brmagenta()
-- brcyan()
-- brwhite()
+- bright\_black()
+- bright\_red()
+- bright\_green()
+- bright\_yellow()
+- bright\_blue()
+- bright\_magenta()
+- bright\_cyan()
+- bright\_white()
 
 ### Styles
 
@@ -110,32 +104,32 @@ print(combo)
 
 ### BG Colors
 
-- bgblack()
-- bgred()
-- bggreen()
-- bgyellow()
-- bgblue()
-- bgmagenta()
-- bgcyan()
-- bgwhite()
+- on\_black()
+- on\_red()
+- on\_green()
+- on\_yellow()
+- on\_blue()
+- on\_magenta()
+- on\_cyan()
+- on\_white()
 
 ---
 
-### 8-Bit Colors 
+### Extended Colors 
 
 #### (1-7 = Standard, 8-15 = Bright, 16-231 = 216 Palette, 232-255 = Grayscale)
 
-- color8(_0-255_)
-- bg8(_0-255_)
+- extended(_0-255_)
+- on\_extendted(_0-255_)
 
 ---
 
 
-### 24-Bit Colors 
+### RGB Colors 
 
 #### (__NOT SUPPORTED IN SOME TERMINALS__)
 
-- color24(_r_, _g_, _b_)
-- bg24(_r_, _g_, _b_)
+- rgb(_r_, _g_, _b_)
+- on\_rgb(_r_, _g_, _b_)
 
 

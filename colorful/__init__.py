@@ -9,8 +9,8 @@
 # bg = \33[ + 4 + COLOR NUMBER + m
 
 __author__ = "Jason Rebuck"
-__copyright__ = "2021"
-__version__ = "0.19"
+__copyright__ = "2021-2022"
+__version__ = "0.20"
 
 class Color:
     """Output Text With Color And Style"""
@@ -33,7 +33,7 @@ class Color:
             "italic" : 3,
             "underline" : 4,
             "blink" : 5,
-            #"rapid" : 6, #rapid blink. not usually supported
+            "rapid" : 6, #rapid blink. not usually supported
             "invert" : 7,
             "hide" : 8, #hides output
             "strike" : 9, #not usually supported
@@ -74,22 +74,22 @@ class Color:
     #16-231 = 216 colors
     #232-255 = grayscale
 
-    def color8(self, color=0):
-        """Wrap with 8-bit color (0-255)"""
+    def extended(self, color=0):
+        """Wrap with extended color (0-255)"""
         return self._wrap("38;5;", color)
 
-    def bg8(self, color=0):
-        """Wrap with 8-bit bg color (0-255)"""
+    def on_extended(self, color=0):
+        """Wrap with extended bg color (0-255)"""
         return self._wrap("48;5;", color)
 
     # 24-bit colors
     # R,G,B
     # NOT SUPPORTED IN SOME TERMINALS
-    def color24(self, r=0, g=0, b=0):
+    def rgb(self, r=0, g=0, b=0):
         """Wrap with 24-bit color (r,g,b)"""
         return self._wrap("38;2;", f"{r};{g};{b}")
 
-    def bg24(self, r=0, g=0, b=0):
+    def on_rgb(self, r=0, g=0, b=0):
         """Wrap with 24-bit bg color (r,g,b)"""
         return self._wrap("48;2;", f"{r};{g};{b}")
 
@@ -127,68 +127,68 @@ class Color:
         return self._color("white")
 
     # Shortcut Bright Colors
-    def brblack(self):
+    def bright_black(self):
         """Color Bright Black"""
         return self._bright("black")
 
-    def brred(self):
+    def bright_red(self):
         """Color Bright Red"""
         return self._bright("red")
 
-    def brgreen(self):
+    def bright_green(self):
         """Color Bright Green"""
         return self._bright("green")
 
-    def bryellow(self):
+    def bright_yellow(self):
         """Color Bright Yellow"""
         return self._bright("yellow")
 
-    def brblue(self):
+    def bright_blue(self):
         """Color Bright Blue"""
         return self._bright("blue")
 
-    def brmagenta(self):
+    def bright_magenta(self):
         """Color Bright Magenta"""
         return self._bright("magenta")
 
-    def brcyan(self):
+    def bright_cyan(self):
         """Color Bright Cyan"""
         return self._bright("cyan")
 
-    def brwhite(self):
+    def bright_white(self):
         """Color Bright White"""
         return self._bright("white")
 
     # Shortcut Background
-    def bgblack(self):
+    def on_black(self):
         """Background Black"""
         return self._bg("black")
 
-    def bgred(self):
+    def on_red(self):
         """Background Red"""
         return self._bg("red")
 
-    def bggreen(self):
+    def on_green(self):
         """Background Green"""
         return self._bg("green")
 
-    def bgyellow(self):
+    def on_yellow(self):
         """Background Yellow"""
         return self._bg("yellow")
 
-    def bgblue(self):
+    def on_blue(self):
         """Background Blue"""
         return self._bg("blue")
 
-    def bgmagenta(self):
+    def on_magenta(self):
         """Background Magenta"""
         return self._bg("magenta")
 
-    def bgcyan(self):
+    def on_cyan(self):
         """Background Cyan"""
         return self._bg("cyan")
 
-    def bgwhite(self):
+    def on_white(self):
         """Background White"""
         return self._bg("white")
 
@@ -227,7 +227,6 @@ class Color:
 
     def strike(self):
         """Style Strike"""
-        #NOT USUALLY SUPPORTED!
         return self._style("strike")
 
     # Output
