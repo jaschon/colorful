@@ -4,8 +4,8 @@ __Color terminal text with ANSI Styles and Colors.__
 ## Install
 
 ```
-python setup.py install
-python setup.py test
+python ./setup.py build
+pip install .
 ```
 
 ## Import
