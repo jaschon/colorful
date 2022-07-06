@@ -37,7 +37,7 @@ print(Color("This is some text").green()) # Create and output in one line.
 
 ```
 c = Color("This is a chain example")
-c.bold().green().on\_magenta() #green text, magenta background
+c.bold().green().on_magenta() #green text, magenta background
 print(c) #output
 ```
 
